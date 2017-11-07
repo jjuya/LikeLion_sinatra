@@ -12,6 +12,8 @@ AI 빅데이터 분석가 양성 과정
 - day 2 : Sinatra 입문
     * Sinatra : http://www.sinatrarb.com/intro-ko.html
     * Sinatra 활용
-        - 점심 메뉴 추천 : hash
-        - 로또 번호 추천
-        - op.gg 스크래핑 : Nokogiri, HTTParty, logging(csv, http://ruby-doc.org/stdlib-2.0.0/libdoc/csv/rdoc/CSV.html)
+        - 점심 메뉴 추천(lunch.erb) : hash
+        - 로또 번호 추천(lotto.erb)
+        - op.gg 전적 검색(log.erb)
+            * 전적 스크래핑(search.erb) : Nokogiri, HTTParty, logging(csv, http://ruby-doc.org/stdlib-2.0.0/libdoc/csv/rdoc/CSV.html)
+            * 전적 로깅(search.erb)
