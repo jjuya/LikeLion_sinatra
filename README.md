@@ -16,4 +16,4 @@ AI 빅데이터 분석가 양성 과정
         - 로또 번호 추천(lotto.erb)
         - op.gg 전적 검색(log.erb)
             * 전적 스크래핑(search.erb) : Nokogiri, HTTParty, logging(csv, http://ruby-doc.org/stdlib-2.0.0/libdoc/csv/rdoc/CSV.html)
-            * 전적 로깅(search.erb)
+            * 전적 로깅 보기(search.erb)
