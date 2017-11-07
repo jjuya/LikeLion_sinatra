@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>잡동사니</title>
+    </head>
+    <body>
+        <h1> LOL 전적 검색 로그</h1>
+        
+        <p> <%= @log %> </p>
+        
+        <!-- @log를 테이블로 출력 하라 -->
+        <table style="width:100%">
+            <tr>
+                <th>소환사 이름</th>
+                <th>승</th> 
+                <th>패</th>
+                <th>시간</th>
+            </tr>
+            
+            <% @log.each do |row| %>
+            <tr>
+                <% row.each do |col| %>
+                <td> <%= col %></td>
+                <% end%>
+            </tr>
+            <% end %>
+            
+        </table>
+        
+        <%= @table %>
+    </body>
+</html>

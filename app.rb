@@ -5,6 +5,9 @@ require 'httparty'
 require 'nokogiri'
 
 require 'uri'
+require 'date'
+
+require 'csv'
 
 get '/' do
     send_file 'index.html'
@@ -75,8 +78,8 @@ get '/search' do
     
     # URL encode : https://stackoverflow.com/questions/17375947/parsing-string-to-add-to-url-encoded-url
     # global substitution : gsub("원래 글자", "바꿀 글자")
-    @userName = params[:userName].gsub(" ", "+")
-    @keyword = URI.encode(params[:userName].gsub(" ", "+"))
+    @id = params[:userName].gsub(" ", "+")
+    @keyword = URI.encode(params[:userName])
     
     res = HTTParty.get(url + @keyword)
     
@@ -84,11 +87,35 @@ get '/search' do
     
     
     @win = text.css("span.wins").text
-    @lose = text.css("span.loses").text
+    @loss = text.css("span.losses").text
    
     # "#{win.text}"
     
+    # log 남기기
+    # a+ : append
+    
+    # File.open("log.txt", 'a+') do |f|
+    #     f.write("#{@id}, #{@win}, #{@loss}," + Time.now.to_s + "\n")
+    # end
+    
+    # cf. http://ruby-doc.org/stdlib-2.0.0/libdoc/csv/rdoc/CSV.html
+    CSV.open('log.csv', 'a+') do |csv|
+        csv << [@id, @win, @loss, Time.now.to_s]
+    end
+    
     erb :search
+end
+
+get '/log' do
+    @log = []
+    
+    CSV.foreach('log.csv') do |row|
+        # [[...., ...., ...]]
+        @log << row
+
+    end
+    
+    erb :log
 end
 
 # 사용자에게 이름을 출력해주는 
