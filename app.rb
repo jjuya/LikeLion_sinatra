@@ -17,8 +17,6 @@ get '/welcome' do
     "welcome!"
 end
 
-
-
 get '/lunch' do
     lunch = ["20층", "김밥까페", "빵", "순남시레기"]
     
