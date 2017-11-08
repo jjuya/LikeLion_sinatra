@@ -8,12 +8,10 @@ AI 빅데이터 분석가 양성 과정
         - 랜덤 함수 : sample.rb
     * Ruby 활용 Scraping : Nokogiri, HTTParty
     * create file & rename file : File.open, File.rename
-    * 
-- day 2 : Sinatra 입문
+- day 2 : [Sinatra 입문](https://github.com/jjuya/LikeLion_sinatra)
     * Sinatra : http://www.sinatrarb.com/intro-ko.html
     * Sinatra 활용
-        - 점심 메뉴 추천(lunch.erb) : hash
-        - 로또 번호 추천(lotto.erb)
-        - op.gg 전적 검색(log.erb)
-            * 전적 스크래핑(search.erb) : Nokogiri, HTTParty, logging(csv, http://ruby-doc.org/stdlib-2.0.0/libdoc/csv/rdoc/CSV.html)
-            * 전적 로깅 보기(search.erb)
+        - 점심 메뉴 추천 : hash
+        - 로또 번호 추천
+        - op.gg 스크래핑 : Nokogiri, HTTParty, logging(csv, http://ruby-doc.org/stdlib-2.0.0/libdoc/csv/rdoc/CSV.html)
+    * 서버 : Heroku
